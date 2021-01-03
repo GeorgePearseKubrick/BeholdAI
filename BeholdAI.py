@@ -1,17 +1,10 @@
 import json
-import matplotlib.pyplot as plt
-import numpy as np
-import os
 import pandas as pd
 import plotly.express as px
-import seaborn as sns 
 import streamlit as st
 
 from datetime import datetime as dt
-from sklearn.metrics import (
-    fbeta_score,
-    matthews_corrcoef
-)
+from sklearn.metrics import fbeta_score
 
 st.set_option('deprecation.showPyplotGlobalUse', False)
 
