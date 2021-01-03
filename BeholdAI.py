@@ -141,7 +141,6 @@ def select_institute(df, institution):
     return df
 
 
-@st.cache(show_spinner=True, persist=True)
 def get_average_processing_time(hospital_records_df):
     hospital_records_df['time_diff'] = pd.to_datetime(hospital_records_df['Result Message Sent'])  - \
                                        pd.to_datetime(hospital_records_df['Final Image Received']) 
@@ -200,7 +199,6 @@ Where the user attributes $\beta$ times as much importance to recall as precisio
 
 
 
-@st.cache(show_spinner=True, persist=True)
 def join_datasets(radiologist_labels_df, model_outputs_df):
     radiologist_model = pd.merge(radiologist_labels_df, 
                             model_outputs_df, 
@@ -232,7 +230,6 @@ def retrieve_results_of_threshold(abnormal_threshold, radiologist_model):
     return radiologist_model, count_normal, count_abnormal
 
 
-@st.cache(show_spinner=True, persist=True)
 def calc_fbeta(radiologist_model, beta, ab_threshold):
     radiologist_model['is_normal'] = radiologist_model['Normal'].apply(lambda x: 1 if x < ab_threshold else 0)
     # fbeta_score(y_true, y_pred)
@@ -247,7 +244,6 @@ st.write(f"Number classified as abnormal at this threshold = **{count_abnormal}*
 st.write(f"Number classified as normal at this threshold = **{count_normal}**")
 
 
-@st.cache(show_spinner=True, persist=True)
 def return_fbeta_score_plot(radiologist_model, beta):
     """
     Plot a line graph of the f1 score at different thresholds, just put a line at the selected value.
