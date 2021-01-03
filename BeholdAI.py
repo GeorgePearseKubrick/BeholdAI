@@ -17,7 +17,7 @@ def view_rows_dup_ids(df, id_col):
     return df[df.duplicated(subset=[id_col], keep=False)].sort_values(id_col)
 
 
-@st.cache(show_spinner=True, persist=True, allow_output_mutation=True))
+@st.cache(show_spinner=True, persist=True, allow_output_mutation=True)
 def load_data():
     """
     Load in json data files and perform preliminary manipulations
