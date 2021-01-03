@@ -17,3 +17,13 @@ but didn't think it sufficiently includes a consideration of cost / real-life im
 I have left some arguably unnecessary data in, I figured that any data that was necessary to sense-check the metrics/results 
 is therefore useful in the tool itself. The solution is designed to also serve as a check on any problems with the upstream 
 data pipeline and highlight any alarm bells (e.g. surge in duplicates).
+
+## Running instructions
+
+Assuming you've already run pip install virtualenv, open up powershell/git bash (therefore should be the same on linux), navigate to the repo.
+```
+virtualenv beholdenv
+. beholdenv/Scripts/activate
+pip install requirements.txt
+streamlit run BeholdAI.py
+```
