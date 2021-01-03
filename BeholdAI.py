@@ -17,7 +17,6 @@ def view_rows_dup_ids(df, id_col):
     return df[df.duplicated(subset=[id_col], keep=False)].sort_values(id_col)
 
 
-@st.cache(show_spinner=True, persist=True, allow_output_mutation=True)
 def load_data():
     """
     Load in json data files and perform preliminary manipulations
@@ -47,7 +46,6 @@ def load_data():
 radiologist_labels_df, hospital_records_df, model_outputs_df = load_data()
 
 
-@st.cache(show_spinner=True, persist=True, allow_output_mutation=True)
 def hospital_records_cleaning(hospital_records_df):
     """
     Remove duplicates from hospital_records and model_outputs_df and standarsize the probabilistic classifications.
@@ -65,7 +63,6 @@ def hospital_records_cleaning(hospital_records_df):
     return hospital_records_df, logging
 
 
-@st.cache(show_spinner=True, persist=True)
 def model_outputs_cleaning(model_outputs_df):
     logging=[]
 
@@ -88,7 +85,6 @@ def model_outputs_cleaning(model_outputs_df):
     return model_outputs_df, logging, model_outputs_dirty
 
 
-@st.cache(show_spinner=True, persist=True, allow_output_mutation=True)
 def radiologist_labels_cleaning(radiologist_labels_df):
     """
     Some rows have duplicates even once distilled to Normal vs. Abormal, in the absence of any distinguishing 
@@ -204,7 +200,7 @@ Where the user attributes $\beta$ times as much importance to recall as precisio
 
 
 
-@st.cache(show_spinner=True, persist=True, allow_output_mutation=True)
+@st.cache(show_spinner=True, persist=True)
 def join_datasets(radiologist_labels_df, model_outputs_df):
     radiologist_model = pd.merge(radiologist_labels_df, 
                             model_outputs_df, 
@@ -225,7 +221,6 @@ st.write(f"""
 """)
 
 
-@st.cache(show_spinner=True, persist=True, allow_output_mutation=True)
 def retrieve_results_of_threshold(abnormal_threshold, radiologist_model):
     """
     Calculate the metrics for every threshold to improve the load performance while tweaking. Greater upfront cost
@@ -252,7 +247,7 @@ st.write(f"Number classified as abnormal at this threshold = **{count_abnormal}*
 st.write(f"Number classified as normal at this threshold = **{count_normal}**")
 
 
-@st.cache(show_spinner=True, persist=True, allow_output_mutation=True)
+@st.cache(show_spinner=True, persist=True)
 def return_fbeta_score_plot(radiologist_model, beta):
     """
     Plot a line graph of the f1 score at different thresholds, just put a line at the selected value.
