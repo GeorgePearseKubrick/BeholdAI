@@ -27,3 +27,5 @@ virtualenv beholdenv
 pip install requirements.txt
 streamlit run BeholdAI.py
 ```
+
+However <b> IF </b> everything's worked out the dashboard should be a available at https://share.streamlit.io/georgepearsekubrick/beholdai/main/BeholdAI.py
