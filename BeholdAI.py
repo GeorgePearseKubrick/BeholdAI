@@ -17,7 +17,7 @@ def view_rows_dup_ids(df, id_col):
     return df[df.duplicated(subset=[id_col], keep=False)].sort_values(id_col)
 
 
-@st.cache(show_spinner=True, persist=True)
+@st.cache(show_spinner=True, persist=True, allow_output_mutation=True))
 def load_data():
     """
     Load in json data files and perform preliminary manipulations
@@ -47,7 +47,7 @@ def load_data():
 radiologist_labels_df, hospital_records_df, model_outputs_df = load_data()
 
 
-@st.cache(show_spinner=True, persist=True)
+@st.cache(show_spinner=True, persist=True, allow_output_mutation=True)
 def hospital_records_cleaning(hospital_records_df):
     """
     Remove duplicates from hospital_records and model_outputs_df and standarsize the probabilistic classifications.
@@ -88,7 +88,7 @@ def model_outputs_cleaning(model_outputs_df):
     return model_outputs_df, logging, model_outputs_dirty
 
 
-@st.cache(show_spinner=True, persist=True)
+@st.cache(show_spinner=True, persist=True, allow_output_mutation=True))
 def radiologist_labels_cleaning(radiologist_labels_df):
     """
     Some rows have duplicates even once distilled to Normal vs. Abormal, in the absence of any distinguishing 
