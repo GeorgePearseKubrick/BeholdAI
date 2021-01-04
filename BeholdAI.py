@@ -140,9 +140,9 @@ data_cleaning.write(f"""
 * Length of radiologist-labels before any cleaning **{radiologist_labels_logging[0]}**. \n
 * Length of radiologist-labels after removing _perfect_ duplicates **{radiologist_labels_logging[1]}**. \n
 * Length of radiologist-labels after removing corrupt data (duplicate accession numbers) **{radiologist_labels_logging[2]}**. \n
-* Length of radiologist-labels before any cleaning **{hospital_records_logging[0]}**. \n
-* Length of radiologist-labels after removing _perfect_ duplicates **{hospital_records_logging[1]}**. \n
-* Length of radiologist-labels after removing corrupt data (duplicate accession numbers) **{hospital_records_logging[2]}**. \n
+* Length of hospital-records before any cleaning **{hospital_records_logging[0]}**. \n
+* Length of hospital-records after removing _perfect_ duplicates **{hospital_records_logging[1]}**. \n
+* Length of hospital-records after removing corrupt data (duplicate accession numbers) **{hospital_records_logging[2]}**. \n
 """)
 
 
