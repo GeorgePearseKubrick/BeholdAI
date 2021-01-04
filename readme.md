@@ -20,5 +20,4 @@ I figured that any data that was necessary to sense-check the metrics/results is
 The solution is designed to also serve as a check on any problems with the upstream data pipeline and highlight any 
 alarm bells (e.g. surge in duplicates). Internal products should have debugging built-in.
 
-
-
+Dashboard can be viewed directly at https://share.streamlit.io/georgepearsekubrick/beholdai/main/BeholdAI.py if the streamlit server is still running.
