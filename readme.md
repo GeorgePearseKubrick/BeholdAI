@@ -16,8 +16,6 @@ but I've still stated what I suspect is a reasonable range. I considered using M
 it incorporates all quadrants of the confusion matrix but didn't think it sufficiently includes a consideration of
 implications.
 
-I figured that any data that was necessary to sense-check the metrics/results is therefore useful in the tool itself. 
-The solution is designed to also serve as a check on any problems with the upstream data pipeline and highlight any 
-alarm bells (e.g. surge in duplicates). Internal products should have debugging built-in.
+I figured that any data that was necessary to sense-check the metrics/results is therefore useful in the tool itself.
 
 Dashboard can be viewed directly at https://share.streamlit.io/georgepearsekubrick/beholdai/main/BeholdAI.py if the streamlit server is still running.
