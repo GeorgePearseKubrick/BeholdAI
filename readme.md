@@ -18,4 +18,15 @@ implications.
 
 I figured that any data that was necessary to sense-check the metrics/results is therefore useful in the tool itself.
 
+## How to run
+
+Navigate to the folder with the project, (pip install virtualenv if you don't already have it). The below has been tested for git bash and powershell.
+
+```
+virtualenv beholdenv
+. beholdenv/scripts/activate
+pip install requirements.txt
+streamlit run BeholdAI.py
+```
+
 Dashboard can be viewed directly at https://share.streamlit.io/georgepearsekubrick/beholdai/main/BeholdAI.py if the streamlit server is still running.
