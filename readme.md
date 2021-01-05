@@ -25,7 +25,7 @@ Navigate to the folder with the project, (pip install virtualenv if you don't al
 ```
 virtualenv beholdenv
 . beholdenv/scripts/activate
-pip install requirements.txt
+pip install -r requirements.txt
 streamlit run BeholdAI.py
 ```
 
